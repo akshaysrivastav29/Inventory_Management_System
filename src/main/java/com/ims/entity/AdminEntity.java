@@ -4,8 +4,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
 
+
+/** Represents 'Admin' Table
+ * @author Rajesh Sinha
+ * @version 1.0
+ */
 @Getter
 @Setter
 @Entity
@@ -26,20 +30,12 @@ public class AdminEntity {
     private String lastName;
 
     @Column(name = "admin_email", nullable = false,
-            length = 50)
+            unique = true, length = 50)
     private String email;
 
     @Column(name = "admin_contact", nullable = false,
-            length = 10)
+            unique = true, length = 10)
     private long contact;
-
-    @Column(name = "admin_address", nullable = false,
-            length = 100)
-    private String address;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "admin_joining_date", nullable = false)
-    private Date joiningDate;
 
     @Column(name = "admin_active", nullable = false)
     private boolean active;
