@@ -6,14 +6,14 @@ import lombok.Setter;
 import javax.persistence.*;
 
 
-/** Represents 'Admin' Table
+/** Represents 'inventory_admin' Table
  * @author Rajesh Sinha
  * @version 1.0
  */
 @Getter
 @Setter
 @Entity
-@Table(name = "admin")
+@Table(name = "inventory_admin")
 public class AdminEntity {
 
     @Id
@@ -22,21 +22,21 @@ public class AdminEntity {
     private String id;
 
     @Column(name = "admin_first_name", nullable = false,
-            length = 20)
+            length = 50)
     private String firstName;
 
     @Column(name = "admin_last_name", nullable = false,
-            length = 20)
+            length = 50)
     private String lastName;
 
     @Column(name = "admin_email", nullable = false,
-            unique = true, length = 50)
+            unique = true, length = 100)
     private String email;
 
     @Column(name = "admin_contact", nullable = false,
             unique = true, length = 10)
     private long contact;
 
-    @Column(name = "admin_active", nullable = false)
-    private boolean active;
+    @Column(name = "admin_enabled", nullable = false)
+    private boolean enabled;
 }
