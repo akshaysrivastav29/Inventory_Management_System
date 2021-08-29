@@ -39,4 +39,8 @@ public class AdminEntity {
 
     @Column(name = "admin_enabled", nullable = false)
     private boolean enabled;
+
+    @OneToOne
+    @JoinColumn(name = "inventory_id", nullable = false)
+    private InventoryEntity inventory;
 }

@@ -31,5 +31,6 @@ public class InventoryEntity {
     @Column(name = "inventory_active", nullable = false)
     private boolean active;
 
-    //TODO: Add mapping to 'inventory_admin' table
+    @OneToOne(mappedBy = "inventory")
+    private AdminEntity admin;
 }
