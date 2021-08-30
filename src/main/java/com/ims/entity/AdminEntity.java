@@ -37,6 +37,10 @@ public class AdminEntity {
             unique = true, length = 10)
     private long contact;
 
+    @Column(name = "admin_password", nullable = false,
+            length = 20)
+    private String password;
+
     @Column(name = "admin_enabled", nullable = false)
     private boolean enabled;
 
