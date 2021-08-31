@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
 /** Represents 'inventory' Table
  * @author Rajesh Sinha
@@ -24,13 +26,17 @@ public class InventoryEntity {
             length = 6)
     private int zipCode;
 
-    @Column(name = "inventory_name", nullable = false,
-            length = 50)
-    private String name;
-
     @Column(name = "inventory_active", nullable = false)
     private boolean active;
 
     @OneToOne(mappedBy = "inventory")
     private AdminEntity admin;
+
+    @OneToMany(targetEntity = ItemEntity.class)
+    @JoinColumn(name = "inventory_items", referencedColumnName = "inventory_id")
+    private List<ItemEntity> items;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "last_updated_on", nullable = false)
+    private Date lastUpdatedDate;
 }

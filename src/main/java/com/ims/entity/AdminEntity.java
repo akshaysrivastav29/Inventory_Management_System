@@ -4,12 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 
-/** Represents 'inventory_admin' Table
- * @author Rajesh Sinha
- * @version 1.0
- */
 @Getter
 @Setter
 @Entity
@@ -17,7 +14,7 @@ import javax.persistence.*;
 public class AdminEntity {
 
     @Id
-    @Column(name = "admin_id",length = 15,
+    @Column(name = "admin_id",length = 8,
             unique = true, nullable = false)
     private String id;
 
@@ -35,16 +32,19 @@ public class AdminEntity {
 
     @Column(name = "admin_contact", nullable = false,
             unique = true, length = 10)
-    private long contact;
+    private Long contact;
 
-    @Column(name = "admin_password", nullable = false,
-            length = 20)
+    @Column(name = "admin_password", nullable = false)
     private String password;
 
     @Column(name = "admin_enabled", nullable = false)
-    private boolean enabled;
+    private Boolean enabled;
 
     @OneToOne
     @JoinColumn(name = "inventory_id", nullable = false)
     private InventoryEntity inventory;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "last_updated_on", nullable = false)
+    private Date lastUpdatedDate;
 }
