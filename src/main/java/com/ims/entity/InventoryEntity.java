@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -25,6 +26,9 @@ public class InventoryEntity {
 
     @OneToOne(mappedBy = "inventory")
     private AdminEntity admin;
+
+    @OneToMany(mappedBy = "inventory")
+    private Set<StorageEntity> items;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "last_updated_on", nullable = false)

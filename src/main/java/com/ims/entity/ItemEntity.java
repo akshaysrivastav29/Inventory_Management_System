@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -28,6 +29,9 @@ public class ItemEntity {
     @OneToOne
     @JoinColumn(name = "item_category", nullable = false)
     private ItemCategoryEntity category;
+
+    @OneToMany(mappedBy = "item")
+    private Set<StorageEntity> inventories;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "last_updated_on", nullable = false)
