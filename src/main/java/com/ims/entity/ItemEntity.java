@@ -1,5 +1,6 @@
 package com.ims.entity;
 
+import com.ims.entity.independant.ItemCategoryEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +10,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "inventory_items")
+@Table(name = "items")
 public class ItemEntity {
 
     @Id
@@ -23,9 +24,6 @@ public class ItemEntity {
 
     @Column(name = "item_price", nullable = false)
     private Double price;
-
-    @Column(name = "item_quantity_available", nullable = false)
-    private Integer quantityAvailable;
 
     @Column(name = "item_description")
     private String description;

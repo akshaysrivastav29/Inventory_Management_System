@@ -10,7 +10,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "inventory_admin")
+@Table(name = "admins")
 public class AdminEntity {
 
     @Id
@@ -38,7 +38,7 @@ public class AdminEntity {
     private String password;
 
     @Column(name = "admin_enabled", nullable = false)
-    private Boolean enabled;
+    private Boolean enabled=false;
 
     @OneToOne
     @JoinColumn(name = "inventory_id", nullable = false)

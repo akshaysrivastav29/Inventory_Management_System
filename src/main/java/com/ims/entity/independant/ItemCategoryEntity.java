@@ -1,4 +1,4 @@
-package com.ims.entity;
+package com.ims.entity.independant;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "inventory_item_categories")
+@Table(name = "item_categories")
 public class ItemCategoryEntity {
 
     @Id

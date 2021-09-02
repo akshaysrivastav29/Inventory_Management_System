@@ -7,14 +7,10 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-/** Represents 'inventory' Table
- * @author Rajesh Sinha
- * @version 1.0
- */
 @Getter
 @Setter
 @Entity
-@Table(name = "inventory")
+@Table(name = "inventories")
 public class InventoryEntity {
 
     @Id
@@ -24,17 +20,13 @@ public class InventoryEntity {
 
     @Column(name = "inventory_zip_code", nullable = false,
             length = 6)
-    private int zipCode;
+    private Integer zipCode;
 
     @Column(name = "inventory_active", nullable = false)
-    private boolean active;
+    private Boolean active=false;
 
     @OneToOne(mappedBy = "inventory")
     private AdminEntity admin;
-
-    @OneToMany(targetEntity = ItemEntity.class)
-    @JoinColumn(name = "inventory_items", referencedColumnName = "inventory_id")
-    private List<ItemEntity> items;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "last_updated_on", nullable = false)
