@@ -1,7 +1,5 @@
 package com.ims.entity;
 
-import com.ims.entity.independant.OrderCategoryEntity;
-import com.ims.entity.independant.OrderStatusEntity;
 import lombok.Getter;
 import lombok.Setter;
 

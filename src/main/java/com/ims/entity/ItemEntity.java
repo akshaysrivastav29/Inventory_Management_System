@@ -1,6 +1,5 @@
 package com.ims.entity;
 
-import com.ims.entity.independant.ItemCategoryEntity;
 import lombok.Getter;
 import lombok.Setter;
 

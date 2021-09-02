@@ -1,4 +1,4 @@
-package com.ims.entity.independant;
+package com.ims.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,19 +9,19 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "order_categories")
-public class OrderCategoryEntity {
+@Table(name = "item_categories")
+public class ItemCategoryEntity {
 
     @Id
-    @Column(name = "order_category_id", nullable = false,
-            unique = true, length = 4)
+    @Column(name = "item_category_id", nullable = false,
+            unique = true, length = 8)
     private String id;
 
-    @Column(name = "order_category_name", nullable = false,
-            unique = true)
+    @Column(name = "item_category_name", nullable = false,
+            unique = true, length = 20)
     private String name;
 
-    @Column(name = "order_category_description")
+    @Column(name = "item_category_description")
     private String description;
 
     @Temporal(TemporalType.DATE)

@@ -1,4 +1,4 @@
-package com.ims.entity.independant;
+package com.ims.entity;
 
 import lombok.Getter;
 import lombok.Setter;
