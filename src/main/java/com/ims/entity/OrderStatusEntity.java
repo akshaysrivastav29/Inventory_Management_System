@@ -13,12 +13,10 @@ import java.util.Date;
 public class OrderStatusEntity {
 
     @Id
-    @Column(name = "order_status_id", nullable = false,
-            unique = true, length = 5)
+    @Column(name = "order_status_id", unique = true, nullable = false, length = 5)
     private String id;
 
-    @Column(name = "order_status_name", nullable = false,
-            unique = true, length = 50)
+    @Column(name = "order_status_name", unique = true, nullable = false, length = 50)
     private String status;
 
     @Column(name = "order_status_description")

@@ -13,12 +13,10 @@ import java.util.Date;
 public class ItemCategoryEntity {
 
     @Id
-    @Column(name = "item_category_id", nullable = false,
-            unique = true, length = 8)
+    @Column(name = "item_category_id", unique = true, nullable = false, length = 8)
     private String id;
 
-    @Column(name = "item_category_name", nullable = false,
-            unique = true, length = 20)
+    @Column(name = "item_category_name", unique = true, nullable = false, length = 20)
     private String name;
 
     @Column(name = "item_category_description")

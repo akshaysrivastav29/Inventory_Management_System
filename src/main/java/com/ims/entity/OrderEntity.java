@@ -13,8 +13,7 @@ import java.util.Date;
 public class OrderEntity {
 
     @Id
-    @Column(name = "order_id", nullable = false,
-            unique = true, length = 8)
+    @Column(name = "order_id", unique = true, nullable = false, length = 8)
     private Integer id;
 
     @Temporal(TemporalType.DATE)

@@ -14,12 +14,10 @@ import java.util.List;
 public class InventoryEntity {
 
     @Id
-    @Column(name = "inventory_id", nullable = false,
-            unique = true, length = 10)
+    @Column(name = "inventory_id", unique = true, nullable = false, length = 10)
     private String id;
 
-    @Column(name = "inventory_zip_code", nullable = false,
-            length = 6)
+    @Column(name = "inventory_zip_code", nullable = false, length = 6)
     private Integer zipCode;
 
     @Column(name = "inventory_active", nullable = false)
